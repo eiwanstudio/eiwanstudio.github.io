@@ -40,3 +40,6 @@ footer{text-align:center;font-size:.85rem;padding:24px 16px;opacity:.8}
 .banner .txt{position:relative;z-index:2;max-width:46%;padding:36px}
 .banner h2{font-size:2rem;line-height:1.25}
 @media (max-width:700px){.banner{display:block;min-height:0}.banner img{position:static;height:220px;object-position:88% center}.banner::before{display:none}.banner .txt{max-width:none;padding:20px 22px;text-align:center}.banner h2{font-size:1.5rem}}
+
+.values{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.values .card{margin:0}.values p{margin:0;font-size:.95rem}
+.banner h2{margin:0}
