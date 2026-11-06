@@ -31,3 +31,12 @@ a{color:var(--link)}
 footer{text-align:center;font-size:.85rem;padding:24px 16px;opacity:.8}
 [dir=rtl] h2,[dir=rtl] .brand,[dir=rtl] h3{font-family:"Lalezar","Readex Pro",sans-serif}
 @media (max-width:560px){.hero{flex-direction:column;text-align:center}}
+
+.banner{position:relative;border-radius:26px;overflow:hidden;min-height:400px;display:flex;align-items:center;margin-bottom:18px;background:#f3e7d1;box-shadow:0 4px 18px rgba(34,29,61,.07)}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+[dir=rtl] .banner img{transform:scaleX(-1)}
+.banner::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,231,209,.97) 0,rgba(243,231,209,.88) 38%,rgba(243,231,209,0) 58%);z-index:1}
+[dir=rtl] .banner::before{background:linear-gradient(270deg,rgba(243,231,209,.97) 0,rgba(243,231,209,.88) 38%,rgba(243,231,209,0) 58%)}
+.banner .txt{position:relative;z-index:2;max-width:46%;padding:36px}
+.banner h2{font-size:2rem;line-height:1.25}
+@media (max-width:700px){.banner{display:block;min-height:0}.banner img{position:static;height:220px;object-position:88% center}.banner::before{display:none}.banner .txt{max-width:none;padding:20px 22px;text-align:center}.banner h2{font-size:1.5rem}}
