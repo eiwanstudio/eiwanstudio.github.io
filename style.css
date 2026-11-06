@@ -1,5 +1,6 @@
-:root{--bg:#faf6ee;--ink:#221d3d;--accent:#b8862b;--soft:#efe6d3;--card:#fff;--head:#221d3d;--headtext:#faf6ee;--link:#8a5f12}
-body.bf{--bg:#f4fcf6;--ink:#1c173c;--accent:#ffd54f;--soft:#c9ebec;--head:#125e68;--headtext:#f4fcf6;--link:#187780}
+:root{--bg:#faf6ee;--ink:#2a2550;--accent:#e8b04a;--soft:#f3e7d1;--card:#fff;--head:#3b3672;--hbg:#2c2858;--headtext:#faf6ee;--link:#8a5f12}
+body.studio h2,body.studio h3{font-family:"Baloo Bhaijaan 2","Readex Pro",sans-serif}
+body.bf{--hbg:#125e68;--bg:#f4fcf6;--ink:#1c173c;--accent:#ffd54f;--soft:#c9ebec;--head:#125e68;--headtext:#f4fcf6;--link:#187780}
 body.em{--bg:#fbf6ec;--hbg:#fbf6ec;--headtext:#17302f;--ink:#17302f;--head:#0f6b6e;--accent:#f2a33a;--soft:#eaf5f4;--link:#0a4a4d}
 body.em header,body.mt header{box-shadow:0 2px 12px rgba(0,0,0,.06)}
 body.mt{--bg:#fff6e6;--hbg:#fff;--headtext:#4b3425;--ink:#4b3425;--head:#2f2a75;--accent:#ff6f59;--soft:#ffe9c4;--link:#2f2a75}
