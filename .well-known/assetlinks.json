@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.eiwanstudio.brain_fiesta",
+      "sha256_cert_fingerprints": [
+        "80:62:10:F9:74:AD:22:04:0A:71:C6:29:5D:8A:68:09:08:9A:09:DF:4E:14:C6:8E:3F:E7:26:BD:5B:75:1A:AA",
+        "FE:19:20:BD:50:C0:55:4E:72:18:E3:CE:7B:2F:E8:32:CC:91:D4:FA:AB:78:2D:6F:7F:A6:BD:D2:34:0F:8C:24"
+      ]
+    }
+  }
+]

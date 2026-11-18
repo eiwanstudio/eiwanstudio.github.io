@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="PGGp3Xw7GSw5LAeHc4nKRrVVyX_rfPTpM_oT4OF-V7Y" />
+<link rel="icon" href="/assets/brain-fiesta-icon.png">
+<title>Brain Fiesta: add a friend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #125E68; --teal-glow: #187780; --cloud-white: #F4FCF6; --cloud-shadow: #C9EBEC;
+    --ink-navy: #1C173C; --sprout-amber: #FFD54F; --amber-deep: #F2B632;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, var(--teal-glow), var(--deep-teal));
+    font-family: 'Fredoka', 'Readex Pro', sans-serif; color: var(--ink-navy); padding: 16px;
+  }
+  .card {
+    width: 100%; max-width: 420px; background: var(--cloud-white); border-radius: 28px;
+    padding: 28px 22px; text-align: center; box-shadow: 0 10px 0 var(--cloud-shadow);
+  }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { font-family: 'Readex Pro', sans-serif; font-size: 16px; line-height: 1.5; margin: 0 0 18px; }
+  .code {
+    display: inline-block; font-size: 32px; letter-spacing: 4px; font-weight: 700; background: var(--cloud-shadow);
+    border-radius: 18px; padding: 10px 22px; margin-bottom: 20px; direction: ltr;
+  }
+  .btn {
+    display: block; text-decoration: none; background: var(--sprout-amber); color: var(--ink-navy);
+    font-weight: 700; font-size: 20px; border-radius: 22px; padding: 16px; box-shadow: 0 6px 0 var(--amber-deep);
+    margin-bottom: 12px;
+  }
+  .lang { background: none; border: 0; color: var(--deep-teal); font: inherit; font-size: 15px; text-decoration: underline; cursor: pointer; }
+  [dir="rtl"] body, [dir="rtl"] p { font-family: 'Readex Pro', sans-serif; }
+</style>
+</head>
+<body>
+<main class="card">
+  <h1 id="title">Join me in Brain Fiesta!</h1>
+  <p id="body">Install the game, then add me as a friend with this code:</p>
+  <div class="code" id="code">------</div>
+  <a class="btn" id="open" href="#">Open the app</a>
+  <a class="btn" id="store" href="#">Get it on Google Play</a>
+  <button class="lang" id="lang" type="button">العربية</button>
+</main>
+<script>
+  var PKG = 'com.eiwanstudio.brain_fiesta';
+  var code = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  document.getElementById('code').textContent = code || '------';
+  var ref = encodeURIComponent('c=' + code);
+  document.getElementById('store').href = 'https://play.google.com/store/apps/details?id=' + PKG + '&referrer=' + ref;
+  // If the app is installed, App Links open it directly; this button is a fallback.
+  document.getElementById('open').href = 'intent://eiwanstudio.github.io/brain-fiesta/add/?c=' + code +
+      '#Intent;scheme=https;package=' + PKG + ';S.browser_fallback_url=' +
+      encodeURIComponent('https://play.google.com/store/apps/details?id=' + PKG + '&referrer=' + ref) + ';end';
+  var T = {
+    en: { title: 'Join me in Brain Fiesta!', body: 'Install the game, then add me as a friend with this code:',
+          open: 'Open the app', store: 'Get it on Google Play', lang: 'العربية' },
+    ar: { title: 'انضم إليّ في برين فييستا!', body: 'ثبّت اللعبة ثم أضفني صديقًا بهذا الرمز:',
+          open: 'افتح التطبيق', store: 'حمّلها من Google Play', lang: 'English' }
+  };
+  function setLang(l) {
+    document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    for (var k in T[l]) document.getElementById(k).textContent = T[l][k];
+    try { localStorage.setItem('bf_lang', l); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem('bf_lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || 'en').slice(0, 2) === 'ar' ? 'ar' : 'en'));
+  document.getElementById('lang').onclick = function () { setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar'); };
+</script>
+</body>
+</html>
