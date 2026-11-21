@@ -43,4 +43,5 @@ footer{text-align:center;font-size:.85rem;padding:24px 16px;opacity:.8}
 
 .values{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.values .card{margin:0}.values p{margin:0;font-size:.95rem}
 .banner h2{margin:0}
-footer .social{margin:12px 0 10px;align-items:center}footer .social span{font-weight:600}
+footer .social{margin:12px 0 10px;align-items:center}footer .social span{font-weight:600}footer .social a{width:42px;height:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,color .15s}footer .social a:hover,footer .social a:focus-visible{transform:translateY(-2px);color:var(--link)}footer .social svg{width:20px;height:20px;fill:currentColor}
+@media(max-width:480px){footer .social span{flex-basis:100%}}
